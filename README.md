@@ -21,22 +21,23 @@ Script de análisis de redes WiFi: analiza **congestión de canales** y **seguri
 
 ```bash
 wget https://raw.githubusercontent.com/TuGeneralYT/wifi_analyzer/main/wifi_analyzer.py
+
 Windows (PowerShell):
 powershell
-Copiar
-Editar
+
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/TuGeneralYT/wifi_analyzer/main/wifi_analyzer.py" -OutFile "wifi_analyzer.py"
+
 📦 INSTALACIÓN DE DEPENDENCIAS
 Linux:
-bash
-Copiar
-Editar
 # Requisitos del sistema
+
 sudo apt update
 sudo apt install -y python3 python3-pip wireless-tools
 
 # Instalar matplotlib
 pip3 install matplotlib
+
+
 Windows:
 Instala Python desde: https://www.python.org/downloads/
 
@@ -45,39 +46,32 @@ Marca la opción "Add Python to PATH" durante la instalación.
 Abre CMD o PowerShell como Administrador y ejecuta:
 
 cmd
-Copiar
-Editar
 pip install matplotlib
+
 🚀 EJECUCIÓN
 Linux:
-bash
-Copiar
-Editar
 sudo python3 wifi_analyzer.py
-Windows:
-cmd
-Copiar
-Editar
+
+
+Windows:  cmd
+
 python wifi_analyzer.py
+
 📝 MENÚ PRINCIPAL
-markdown
-Copiar
-Editar
+
 1. Analizar congestión de canales
 2. Evaluar seguridad de redes
 3. Recomendación de canal óptimo
 4. Salir
+
 📋 ARCHIVO requirements.txt (opcional)
 txt
-Copiar
-Editar
+
 matplotlib
 Instalación rápida:
 
-bash
-Copiar
-Editar
 pip install -r requirements.txt
+
 🛡️ LICENCIA
 Este proyecto está licenciado bajo la licencia MIT.
 
