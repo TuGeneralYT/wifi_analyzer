@@ -38,3 +38,41 @@ wget https://raw.githubusercontent.com/TuGeneralYT/wifi_analyzer/main/wifi_analy
 
 # Ejecuta el script con permisos
 sudo python3 wifi_analyzer.py
+
+
+🪟 Windows
+
+# Instala matplotlib
+pip install matplotlib
+
+# Descarga el script (desde navegador o con PowerShell)
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/TuGeneralYT/wifi_analyzer/main/wifi_analyzer.py" -OutFile "wifi_analyzer.py"
+
+# Ejecuta en CMD o PowerShell (como administrador)
+python wifi_analyzer.py
+
+📝 Menú Principal
+markdown
+Copiar
+Editar
+1. Analizar congestión de canales
+2. Evaluar seguridad de redes
+3. Recomendación de canal óptimo
+4. Salir
+📦 Archivo requirements.txt (opcional)
+txt
+Copiar
+Editar
+matplotlib
+Instalación rápida:
+
+bash
+Copiar
+Editar
+pip install -r requirements.txt
+🛡️ Licencia
+Este proyecto está licenciado bajo la licencia MIT.
+
+📬 Contacto
+Desarrollado por @TuGeneralYT (Gh0stL1ne)
+
