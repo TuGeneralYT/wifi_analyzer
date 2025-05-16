@@ -1,0 +1,95 @@
+# 📡 WIFI CRACKER PRO
+
+Herramienta educativa de auditoría WiFi con ataque de fuerza bruta (sólo para pruebas en laboratorios o redes propias). Este script permite:
+
+- Escanear redes WiFi disponibles.
+- Capturar handshakes.
+- Realizar ataques de diccionario para descifrar contraseñas.
+- Conectarse a redes exitosamente vulneradas.
+- Guardar un registro con detalles de las redes accedidas.
+
+> ⚠️ **Uso exclusivo con fines educativos o en entornos de prueba controlados. No nos hacemos responsables del mal uso.**
+
+---
+
+## 🧰 Requisitos
+
+- Kali Linux u otra distribución compatible con modo monitor.
+- Tarjeta de red WiFi compatible.
+- Permisos de superusuario (`sudo`).
+
+---
+
+## 🚀 Instalación de herramientas necesarias
+
+### 1. Clonar este repositorio
+```bash
+git clone https://github.com/TuGeneralYT/wifi_analyzer.git
+cd wifi_analyzer
+```
+
+### 2. Instalar dependencias (aircrack-ng y network-manager)
+```bash
+sudo apt update
+sudo apt install aircrack-ng network-manager -y
+```
+
+### 3. Instalar o ubicar diccionario (ej. rockyou.txt)
+```bash
+gzip -d /usr/share/wordlists/rockyou.txt.gz
+cp /usr/share/wordlists/rockyou.txt ./rockyou.txt
+```
+
+> Asegúrate de que el archivo `rockyou.txt` esté en la misma carpeta que el script o modifica la variable `WORDLIST_PATH`.
+
+---
+
+## 🧪 Ejecución del script `wifi_cracker.py`
+
+### 1. Dar permisos y ejecutar como superusuario
+```bash
+chmod +x wifi_cracker.py
+sudo python3 wifi_cracker.py
+```
+
+### 2. Flujo de trabajo
+
+1. El script escanea las redes WiFi cercanas.
+2. Introduce BSSID, canal y nombre (ESSID) de la red objetivo.
+3. Se activa el modo monitor y se inicia la captura de handshake.
+4. Cuando detectes el handshake (puedes desautenticar desde otra terminal), presiona ENTER.
+5. El script intenta descifrar la clave usando un diccionario.
+6. Si tiene éxito:
+   - Intenta conectarse a la red.
+   - Almacena los datos en `redes_crackeadas.txt` con fecha, BSSID, ESSID, canal, contraseña y gateway.
+
+---
+
+## 🗂️ Archivos Generados
+
+- `redes_crackeadas.txt`: contiene un log de redes vulneradas con éxito.
+- `capture_<essid>.cap`: archivo de captura del handshake.
+
+---
+
+## 📌 Notas adicionales
+
+- Puedes automatizar el desautenticado de clientes con `aireplay-ng` en otra terminal:
+```bash
+sudo aireplay-ng --deauth 10 -a <BSSID> wlan0mon
+```
+
+- Para detener el modo monitor:
+```bash
+sudo airmon-ng stop wlan0mon
+```
+
+---
+
+## 🔒 Disclaimer
+
+Este software se proporciona solo para uso educativo y ético. No se permite su uso en redes de terceros sin autorización.
+
+---
+
+Creado por [@TuGeneralYT](https://github.com/TuGeneralYT)
